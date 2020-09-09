@@ -1,37 +1,43 @@
-﻿@page "/BoxShadowGenerator"
-@page "/"
+﻿@page "/"
 @using BoxShadowGenerator.Models
 
-
-
-<div class="main-box" style="@BoxShadow.ToCss()">
-    <div class="css-text-area">
-        -webkit-box-shadow: @BoxShadow.ParamString <br />
-        -moz-box-shadow: @BoxShadow.ParamString <br />
-        box-shadow: @BoxShadow.ParamString
+<div class="row">
+    <div class="col-6">
+        <div class="slider-container d-flex flex-column">
+            X Length
+            <input @bind-value="BoxShadow.XLength" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="XLength">
+            Y Length
+            <input @bind-value="BoxShadow.YLength" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="YLength">
+            Blur Radius
+            <input @bind-value="BoxShadow.BlurRadius" @bind-value:event="oninput" type="range" min="0" max="255" class="slider" id="BlurRadius">
+            Spread Radius
+            <input @bind-value="BoxShadow.SpreadRadius" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="SpreadRadius">
+            Shadow Colour
+            <ColorEdit ColorChanged="((c) => BoxShadow.ShadowColour = c)" Color="@BoxShadow.ShadowColour" />
+            Background Colour
+            <ColorEdit ColorChanged="((c) => BoxShadow.BackgroundColour = c)" Color="@BoxShadow.BackgroundColour" />
+            Box Colour
+            <ColorEdit ColorChanged="((c) => BoxShadow.BoxColour = c)" Color="@BoxShadow.BoxColour" />
+            Opacity
+            <input @bind-value="BoxShadow.Opacity" @bind-value:event="oninput" type="range" min="0" max="1" step="0.01" class="slider" id="Opacity">
+        </div>
     </div>
+
+
+    <div class="col-6">
+        <div class="main-box" style="@BoxShadow.ToCss(); background-color: @BoxShadow.BoxColour">
+            <div class="css-text-area">
+                -webkit-box-shadow: @BoxShadow.ParamString <br />
+                -moz-box-shadow: @BoxShadow.ParamString <br />
+                box-shadow: @BoxShadow.ParamString
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
 
-<div class="slider-container d-flex flex-column">
-    X Length
-    <input @bind-value="BoxShadow.XLength" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="XLength">
-    Y Length
-    <input @bind-value="BoxShadow.YLength" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="YLength">
-    Blur Radius
-    <input @bind-value="BoxShadow.BlurRadius" @bind-value:event="oninput" type="range" min="0" max="255" class="slider" id="BlurRadius">
-    Spread Radius
-    <input @bind-value="BoxShadow.SpreadRadius" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="SpreadRadius">
-    Shadow Colour
-    <input @bind-value="BoxShadow.ShadowColour" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="ShadowColour">
-    Background Colour
-    <input @bind-value="BoxShadow.BackgroundColour" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="BackgroundColour">
-    Box Colour
-    <input @bind-value="BoxShadow.BoxColour" @bind-value:event="oninput" type="range" min="-255" max="255" class="slider" id="BoxColour">
-    Opacity
-    <input @bind-value="BoxShadow.Opacity" @bind-value:event="oninput" type="range" min="0" max="1" step="0.01" class="slider" id="Opacity">
-</div>
 
 
 
