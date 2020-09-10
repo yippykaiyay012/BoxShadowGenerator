@@ -16,7 +16,7 @@ namespace BoxShadowGenerator.Models
         public int SpreadRadius { get; set; }
         public string ShadowColour { get; set; } = "#000000";
         public string BackgroundColour { get; set; } = "#ffffff";
-        public string BoxColour { get; set; } = "#000000";
+        public string BoxColour { get; set; } = "#6759b1";
         public float Opacity { get; set; } = 1;
         public ShadowType Type { get; set; } = ShadowType.Outline;
 
