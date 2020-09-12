@@ -61,6 +61,7 @@ app {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 .css-text-area{
     color: #ffff;
@@ -72,7 +73,7 @@ app {
     background-color: #fff;
     padding: 50px;
     min-width: 600px;
-
+    border-radius: 10px;
 }
 
 .background-area {
@@ -91,10 +92,33 @@ app {
     margin: auto;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1100px) {
     .background-area {
         grid-template-areas: 'box-area'
                              'slider-area';
+        height: 100%;
     }
 
+
+    .main-box {
+        width: 20rem;
+        height: 20rem;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .slider-container {
+        margin: 0;
+        background-color: #fff;
+        padding: 15px;
+        min-width: 80%;
+        border-radius: 10px;
+    }
+    .slider-area {
+        grid-area: slider-area;
+        margin: 20px;
+    }
 }
