@@ -17,12 +17,11 @@
                 Opacity
                 <input @bind-value="BoxShadow.Opacity" @bind-value:event="oninput" type="range" min="0" max="1" step="0.01" class="slider" id="Opacity">
                 Shadow Colour
-                <ColorEdit ColorChanged="((c) => BoxShadow.ShadowColour = c)" Color="@BoxShadow.ShadowColour" />
+                <input class="colorPicker" type="color" @bind-value="BoxShadow.ShadowColour" @bind-value:event="oninput" />
                 Background Colour
-                <ColorEdit ColorChanged="((c) => BoxShadow.BackgroundColour = c)" Color="@BoxShadow.BackgroundColour" />
+                <input class="colorPicker" type="color" @bind-value="BoxShadow.BackgroundColour" @bind-value:event="oninput" />
                 Box Colour
-                <ColorEdit ColorChanged="((c) => BoxShadow.BoxColour = c)" Color="@BoxShadow.BoxColour" />
-
+                <input class="colorPicker" type="color" @bind-value="BoxShadow.BoxColour" @bind-value:event="oninput" />
             </div>
         </div>
 
